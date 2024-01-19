@@ -1,14 +1,38 @@
 <html>
 
-  <head>
-    <link rel="stylesheet" href="style.css">
-  </head>
+	<head>
+		<link rel="stylesheet" href="style.css">
+	</head>
 
 
-  <body>
-    <h1>NICOLETTE MILLER</h1>
-    <p>Welcome to my website!</p>
-    <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-  </body>
+	<body>
+		<div class="container">
+			<div>
+				<h1 class="header_text">Evan, do you want to be my boyfriend?</h1>
+			</div>
 
+			<div class="gif_container">
+				<img src="https://i.giphy.com/5mt6xWPNMj5ZhNu5PV.webp">
+			</div>
+
+			<div class="buttons">
+				<button class="btn" id = "yesButton" onclick="yesPage()">Yes</button>
+				<button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+			</div>
+
+			<script type="text/javascript">
+				function yesPage() {
+					window.location.href = "yes.html"
+				}
+
+				function moveButton() {
+					var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+					var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+					document.getElementById('noButton').style.left = `${x}px`;
+					document.getElementById('noButton').style.top = `${y}px`;
+				}
+			</script>
+
+		</div>
+	</body>
 </html>
